@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CreateAttachmentUseCase {
 
-    private final AttachmentDomainService tagTabMarkDomainService;
+    private final AttachmentDomainService attachmentDomainService;
     private final TabMarkDomainService tabMarkDomainService;
     private final TagDomainService tagDomainService;
     private final MemberDomainService memberDomainService;
@@ -26,7 +26,7 @@ public class CreateAttachmentUseCase {
 
         Tag tag = tagDomainService.checkAuthor(command.tagId(), member);
 
-        return tagTabMarkDomainService.create(tabMark, tag);
+        return attachmentDomainService.create(tabMark, tag);
     }
 
 }
